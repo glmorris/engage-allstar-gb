@@ -1,0 +1,61 @@
+.logotype {
+	@include opensans;
+	font-weight: 200;
+	font-size: 2.1em;
+	line-height: 1.5em;
+	color: #969696;
+	text-indent: 98px;
+	min-height: 33px;
+	background: url('../img/google_logo.png') no-repeat;
+}
+
+.nav-bg {
+	height: 55px;
+	background: #b62132;
+	//@include background (linear-gradient(left top, #c2202c, #98101b));
+	//background: url('../img/nav.png') repeat-x;
+	margin-bottom: 2%;
+
+	.nav {
+		@extend .wrapper;
+
+		li {
+			position: relative;
+			display: inline-block;
+			list-style: none;
+
+			a {
+				display: inline-block;
+				padding: 1.2em 12px;
+				font-size: 1.5em;
+				@include opensans;
+				color: #ffffff;
+
+				&:hover, &:visited {
+					color: #ffffff;
+					text-decoration: none;
+				}
+			}
+		}
+
+		li.active {
+			a:after{
+				position: absolute;
+				height: 0;
+				width: 0;
+				bottom: 0;
+				border: solid transparent;
+				pointer-events: none;
+				content: " ";
+			}
+
+			a:after {
+				left: 50%;
+				margin-left: -10px;
+				border-width: 10px;
+				border-color: rgba(252, 252, 252, 0);
+				border-bottom-color: #fcfcfc;
+			}
+		}
+	}
+}

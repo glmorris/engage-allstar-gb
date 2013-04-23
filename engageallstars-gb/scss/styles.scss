@@ -1,0 +1,40 @@
+//CSS Reset
+@import '_normalize.scss';
+
+//Mixins and defaults
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(http://fonts.googleapis.com/css?family=Archivo+Black|Archivo+Narrow:400,700|Open+Sans:400,300,600,700);
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/images';
+@import 'compass/css3/border-radius';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/opacity';
+@import '_defaults.scss';
+
+//Header
+@import '_header.scss';
+
+//Base template
+@import '_base.scss';
+
+//Footer
+@import '_footer.scss';
+
+//Splash page
+@import '_enter.scss';
+
+//Home page
+@import '_home.scss';
+
+//Prizes page
+@import '_prizes.scss';
+
+//Resources page
+@import '_resources.scss';
+
+//Rules page
+@import '_rules.scss';
+
+//Mobile Optimizations
+@import '_mobile.scss';

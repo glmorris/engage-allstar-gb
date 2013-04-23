@@ -1,0 +1,11 @@
+.wrapper {
+	max-width: 935px;
+	margin: 0 auto;
+	padding: 0 10px
+}
+
+.content {
+	@extend .wrapper;
+	@include pie-clearfix;
+	margin-bottom: 6em;
+}
