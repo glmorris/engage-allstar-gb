@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Google | {{ l10n.base.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+    <header class="wrapper">
+        <h1 class="logotype">{{ l10n.base.title }}</h1>
+    </header>
+
+    {% if cur_page != 'gate' %}
+    <nav class="nav-bg">
+        <ul class="nav">
+            <li {% if cur_page == 'home' %}class="active"{% endif %}><a href="/">{{ l10n.base.nav.home }}</a></li>
+            <li {% if cur_page == 'prizes' %}class="active"{% endif %}><a href="/prizes">{{ l10n.base.nav.prizes }}</a></li>
+            <li {% if cur_page == 'resources' %}class="active"{% endif %}><a href="/resources">{{ l10n.base.nav.resources }}</a></li>
+            <li {% if cur_page == 'rules' %}class="active"{% endif %}><a href="/rules">{{ l10n.base.nav.rules }}</a></li>
+        </ul>
+    </nav>
+    {% endif %}
+
+    {% block body %}
+    {% endblock body %}
+
+    <footer class="footer">
+        <div class="layer1">
+            <section>
+                <ul class="google-bar">
+                    <li class="blue"></li>
+                    <li class="red"></li>
+                    <li class="yellow"></li>
+                    <li class="green"></li>
+                </ul>
+
+                {#<a href="/rules">{{ l10n.base.terms }}</a>#}
+            </section>
+        </div>
+
+        <div class="layer2">
+            <section>
+                <a href="http://www.google.com" target="_blank">Google</a>
+                <span>&bull;</span>
+                <a href="{{ l10n.base.privacy_url }}" target="_blank">{{ l10n.base.privacy }}</a>
+
+                
+                <aside>
+                   <a href="/rules">{{ l10n.base.terms }}</a>
+                </aside>
+                
+            </section>
+        </div>
+    </footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+    
+    <script type="text/javascript" src="/js/custom.js"></script>
+
+    {% block javascripts %}
+    {% endblock javascripts %}
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39729108-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="content rules-page">
+    <section class="intro">
+        <h1>{{ l10n.rules.headline }}</h1>
+        <p>{{ l10n.rules.intro }}</p>
+    </section>
+
+    <section class="rules">
+        <h2>{{ l10n.rules.headline_competition }}</h2>
+
+        <ol>
+            <li>{{ l10n.rules.rules_competition.rule1 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule2 }}</li>
+
+            <li>{% if user_type == 'unmanaged' %}
+                {{ l10n.rules.rules_competition.rule3_unmanaged }}
+            {% else %}
+                {{ l10n.rules.rules_competition.rule3_managed }}
+            {% endif %}
+            </li>
+
+            <li>{% if user_type == 'silver' %}
+                {{ l10n.rules.rules_competition.rule4_silver }}
+            {% elif user_type == 'gold' %}
+                {{ l10n.rules.rules_competition.rule4_gold }}
+            {% else %}
+                {{ l10n.rules.rules_competition.rule4_unmanaged }}
+            {% endif %}
+            </li>
+
+            <li>{{ l10n.rules.rules_competition.rule5 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule6 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule7 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule8 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule9 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule10 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule11 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule12 }}</li>
+            <li>{{ l10n.rules.rules_competition.rule13 }}</li>
+        </ol>
+    </section>
+
+    <section class="rules">
+        <h2>{{ l10n.rules.headline_offer }}</h2>
+        <ol>
+        {% for rule in l10n.rules.rules_offer %}
+            <li>{{ rule }}</li>
+        {% endfor %}
+        </ol>
+    </section>
+</div>
+{% endblock body %}

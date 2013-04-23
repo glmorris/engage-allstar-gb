@@ -1,0 +1,73 @@
+.learn {
+	width: 40%;
+	float: left;
+	margin-bottom: 7%;
+
+	h2 {
+		@include sanserif;
+		@include linkblue;
+	}
+
+	p {
+		width: 89%;
+	}
+
+	h3 {
+		font-size: 1.1em;
+		line-height: 3em;
+	}
+
+	li {
+		margin-left: 14px;
+		font-size: 1.1em;
+		line-height: 1.6em;
+	}
+}
+
+.learn-video {
+	width: 58%;
+	float: right;
+
+	.video-wrapper {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		height: 0;
+		overflow: hidden;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	p {
+		font-size: 1.2em;
+		line-height: 3em;
+	}
+}
+
+.dress {
+	clear: left;
+	border-top: 1px solid #d7d6d6;
+
+	aside {
+		width: 40%;
+		float: left;
+		margin-top: 3%;
+
+		h3 {
+			font-size: 1.5em;
+			@include sanserif;
+			@include linkblue;
+		}
+	}
+
+	img {
+		float: right;
+		max-width: 545px;
+	}
+}

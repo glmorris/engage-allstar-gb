@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block javascripts %}
+<!--[if lt IE 10]>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#reg-code').focus();
+        });
+    </script>
+<![endif]-->
+{% endblock %}
+
+{% block body %}
+<section class="paper">
+    <img class="allstars-logo" src="img/allstars_logo2.png" alt="{{ l10n.base.title }}" />
+    <h2>{{ l10n.enter.headline }}</h2>
+    <p class="stars">&#9733; &#9733; &#9733;</p>
+
+    <form id="index-reg-code" class="entry-form" action="/enter" method="post">
+        <label class="enter-prompt">{{ l10n.enter.prompt }}</label>
+        <fieldset class="pretty-input">
+            <input id="reg-code" class="text" name="c" type="text" autofocus="autofocus" />
+            <input class="btn" type="image" src="img/submit.png" alt="{{ l10n.enter.button }}" />
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% if code_attempted is defined %}
+            <p class="text-error">{{ l10n.enter.code_error }}</p>
+            {% endif %}
+        </fieldset>
+    </form>
+</section>
+
+<section class="red-bar">
+    <ul class="checkboxes">
+        <li>{{ l10n.enter.checkbox_friendly }}</li>
+        <li>{{ l10n.enter.checkbox_food }}</li>
+        <li>{{ l10n.enter.checkbox_trip }}</li>
+	<li></li>
+      </ul>
+</section>
+{% endblock body %}
